@@ -34,6 +34,7 @@ setopt no_hist_verify
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/z/z.sh
 
 # Customize to your needs...
 
