@@ -7,6 +7,9 @@ set expandtab
 set syntax=on
 set hidden                                 " Allow background buffers
 set autoread                               " Reload files changed outside vim
+set nobackup                               " no backup files
+set nowritebackup                          " only in case you don't want a backup file while editing
+set noswapfile                             " no swap files
 set directory=~/tmp//,.,/var/tmp//,/tmp//  " Move swp files out of working directory, // indicates full path
 
 let g:html_indent_inctags = "html,body,head,tbody"
