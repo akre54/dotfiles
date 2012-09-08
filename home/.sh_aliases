@@ -29,8 +29,3 @@ alias git-wtf='ruby /home/adam/Downloads/git-wtf.sh'
 alias logcat='python /home/adam/Downloads/android-sdk-linux_x86/tools/coloredlogcat.py'
 
 alias spotify='wine "C:\Program Files\Spotify\spotify.exe"'
-
-. ~/.git-completion.bash
-export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\W\$(__git_ps1 '(%s)')$ "
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
