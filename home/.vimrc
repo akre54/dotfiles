@@ -5,8 +5,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set syntax=on
-set hidden
-set directory=~/tmp//,.,/var/tmp//,/tmp// "move swp files out of working directory, // indicates full path
+set hidden                                 " Allow background buffers
+set autoread                               " Reload files changed outside vim
+set directory=~/tmp//,.,/var/tmp//,/tmp//  " Move swp files out of working directory, // indicates full path
 
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
