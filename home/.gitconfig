@@ -1,0 +1,45 @@
+[user]
+  name = Adam Krebs
+  email = amk528@cs.nyu.edu
+[core]
+	editor = vim
+[github]
+  user = akre54
+  token = $GITHUB_TOKEN 
+[apply]
+  whitespace = nowarn
+[branch]
+  autosetuprebase = always
+  autosetupmerge = always
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[alias]
+  st = status
+  ci = commit
+  ca = commit -a -m
+  co = checkout
+  br = branch -a
+  branches = branch -a
+  pick = cherry-pick
+  grab = clone --depth 1 
+
+# Any GitHub repo with my username should be checked out r/w by default
+# http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
+[url "git@github.com:akre54/"]
+  insteadOf = "git://github.com/akre54/"
