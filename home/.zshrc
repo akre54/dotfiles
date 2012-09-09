@@ -35,6 +35,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/z/z.sh
+source $HOME/.secrets
 
 # Customize to your needs...
 
