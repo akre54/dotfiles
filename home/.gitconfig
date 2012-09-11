@@ -33,7 +33,9 @@
   st = status
   ci = commit
   ca = commit -a -m
+  cm = commit -m
   co = checkout
+  d  = diff
   br = branch -a
   branches = branch -a
   pick = cherry-pick
