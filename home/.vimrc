@@ -4,7 +4,11 @@ set number
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set syntax=on
+set syntax=on                              " Syntax highlighting
+set hlsearch                               " highlight search
+set ignorecase                             " Case-insensitive search
+set smartcase                              " Search is case-sensitive when first letter is capital
+set incsearch                              " Incremental search
 set hidden                                 " Allow background buffers
 set autoread                               " Reload files changed outside vim
 set nobackup                               " no backup files
@@ -16,11 +20,10 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-au BufNewFile,BufRead *.rabl,Gemfile,*.ru set filetype=ruby
+au BufNewFile,BufRead Gemfile,*.rabl,*.ru set ft=ruby
 
 " Close vim if NERDTree is the only window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
