@@ -16,6 +16,10 @@ set nowritebackup                          " only in case you don't want a backu
 set noswapfile                             " no swap files
 set directory=~/tmp//,.,/var/tmp//,/tmp//  " Move swp files out of working directory, // indicates full path
 
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
