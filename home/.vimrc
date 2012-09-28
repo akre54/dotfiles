@@ -16,9 +16,18 @@ set nowritebackup                          " only in case you don't want a backu
 set noswapfile                             " no swap files
 set directory=~/tmp//,.,/var/tmp//,/tmp//  " Move swp files out of working directory, // indicates full path
 
-set mouse=a
-map <ScrollWheelUp> <C-Y>
+set autoindent
+set cindent
+set indentkeys-=0#                         " Don't break indent on #
+set cinkeys-=0#
+set cinoptions=:s,ps,ts,cs
+set cinwords=if,else,while,do
+set cinwords+=for,switch,case
+
+set mouse=a                                " Enable mouse in GUI mode
+map <ScrollWheelUp> <C-Y>                  " Use scroll wheel
 map <ScrollWheelDown> <C-E>
+set mousehide                              " Hide mouse after chars typed
 
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
