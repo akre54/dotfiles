@@ -25,7 +25,7 @@ set cinwords=if,else,while,do
 set cinwords+=for,switch,case
 
 set mouse=a                                " Enable mouse in GUI mode
-map <ScrollWheelUp> <C-Y>                  " Use scroll wheel
+map <ScrollWheelUp> <C-Y>                  " Because the scrollwheel just feels natural
 map <ScrollWheelDown> <C-E>
 set mousehide                              " Hide mouse after chars typed
 
