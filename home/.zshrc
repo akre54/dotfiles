@@ -33,12 +33,21 @@ setopt no_hist_verify
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+
+# Fix for slow git completion in large git repos
+__git_files () {
+  _wanted files expl 'local files' _files
+}
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/z/z.sh
 source $HOME/.secrets
 
 # Customize to your needs...
 
+PATH=/Applications/XAMPP/xamppfiles/bin:$PATH
+PATH=$PATH:/usr/share:/usr/local/heroku/bin
+PATH=$PATH:$HOME/pear/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/nvm
 . $HOME/nvm/nvm.sh
