@@ -45,3 +45,5 @@
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
 [url "git@github.com:akre54/"]
   insteadOf = "git://github.com/akre54/"
+[push]
+	default = current
