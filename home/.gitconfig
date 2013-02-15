@@ -5,7 +5,7 @@
 	editor = vim
 [github]
   user = akre54
-  token = $GITHUB_TOKEN 
+  token = $GITHUB_TOKEN
 [apply]
   whitespace = nowarn
 [branch]
@@ -31,6 +31,7 @@
   untracked = cyan
 [alias]
   st = status -sb
+  amend = commit --amend
   ci = commit
   ca = commit -a -m
   cm = commit -m
@@ -39,7 +40,8 @@
   br = branch -a
   branches = branch -a
   pick = cherry-pick
-  grab = clone --depth 1 
+  me = merge --no-ff
+  grab = clone --depth 1
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
