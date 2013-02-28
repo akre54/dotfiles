@@ -45,8 +45,9 @@ source $HOME/.secrets
 
 # Customize to your needs...
 
-PATH=/Applications/XAMPP/xamppfiles/bin:$PATH
 PATH=$PATH:/usr/share:/usr/local/heroku/bin
+PATH=$PATH:$EC2_HOME/AWS-ElasticBeanstalk-CLI-2.2/api/bin
+PATH=$PATH:$HOME/Developer/android-sdk-macosx/platform-tools
 PATH=$PATH:$HOME/pear/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/nvm
