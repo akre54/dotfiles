@@ -39,6 +39,8 @@ __git_files () {
   _wanted files expl 'local files' _files
 }
 
+function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto; }
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/z/z.sh
 source $HOME/.secrets
