@@ -3,6 +3,7 @@
   email = amk528@cs.nyu.edu
 [core]
 	editor = vim
+	excludesfile = /home/adam/.gitignore
 [github]
   user = akre54
   token = $GITHUB_TOKEN
