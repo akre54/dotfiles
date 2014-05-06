@@ -25,6 +25,11 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
 # Don't confirm substitutions before executing
 setopt no_hist_verify
 
@@ -47,7 +52,9 @@ source $HOME/.secrets
 
 # Customize to your needs...
 
+PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH
 PATH=$PATH:/usr/share:/usr/local/heroku/bin
+PATH=$PATH:/Applications/Postgres93.app/Contents/MacOS/bin
 PATH=$PATH:$EC2_HOME/AWS-ElasticBeanstalk-CLI-2.2/api/bin
 PATH=$PATH:$HOME/Developer/android-sdk-macosx/platform-tools
 PATH=$PATH:$HOME/pear/bin
@@ -55,3 +62,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/nvm
 . $HOME/nvm/nvm.sh
 
+source $HOME/.virtualenvs/py/bin/activate
+
+# added by travis gem
+[ -f /Users/adam/.travis/travis.sh ] && source /Users/adam/.travis/travis.sh
