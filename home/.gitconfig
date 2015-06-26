@@ -3,7 +3,9 @@
   email = amk528@cs.nyu.edu
 [core]
 	editor = vim
-	excludesfile = /home/adam/.gitignore
+  excludesfile = /home/adam/.gitignore
+  autocrlf = false
+  filemode = false
 [github]
   user = akre54
   token = $GITHUB_TOKEN
@@ -52,5 +54,11 @@
   insteadOf = "git://github.com/akre54/"
 [push]
 	default = current
-[rerere]
-	enabled = true
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

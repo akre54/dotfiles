@@ -25,13 +25,14 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-# pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
-# cache pip-installed packages to avoid re-downloading
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+# Go source and packages
+export GOPATH=$HOME/go
 
 # Don't confirm substitutions before executing
 setopt no_hist_verify
+
+# Allow jumping to directories just by typing its name
+setopt autocd
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -46,23 +47,48 @@ __git_files () {
 
 function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto; }
 
+rationalize-dot() {
+  if [[ $LBUFFER = *.. ]]; then
+    LBUFFER+=/..
+  else
+    LBUFFER+=.
+  fi
+}
+zle -N rationalize-dot
+bindkey . rationalize-dot
+
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/z/z.sh
 source $HOME/.secrets
 
 # Customize to your needs...
 
-PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH
-PATH=$PATH:/usr/share:/usr/local/heroku/bin
-PATH=$PATH:/Applications/Postgres93.app/Contents/MacOS/bin
-PATH=$PATH:$EC2_HOME/AWS-ElasticBeanstalk-CLI-2.2/api/bin
-PATH=$PATH:$HOME/Developer/android-sdk-macosx/platform-tools
-PATH=$PATH:$HOME/pear/bin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/nvm
-. $HOME/nvm/nvm.sh
+export PATH=$PATH:$HOME/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH
+export PATH=/usr/local/opt/php53/bin:$PATH
+export PATH=$PATH:/usr/share:/usr/local/heroku/bin
+export PATH=$PATH:/Applications/Postgres93.app/Contents/MacOS/bin
+export PATH=$PATH:$EC2_HOME/AWS-ElasticBeanstalk-CLI-2.2/api/bin
+export PATH=$PATH:$HOME/Developer/android-sdk-macosx/platform-tools
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/nvm
+export PATH=$PATH:$GOPATH/bin
 
+source $HOME/nvm/nvm.sh
+
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+export VIRTUAL_ENV_DISABLE_PROMPT=true
+
+# For virtualenvwrapper
+#WORKON_HOME=$HOME/.virtualenvs
 source $HOME/.virtualenvs/py/bin/activate
+#source /usr/local/bin/virtualenvwrapper.sh
+export PYTHONPATH=$HOME/Projects/duolingo-2
+
 
 # added by travis gem
 [ -f /Users/adam/.travis/travis.sh ] && source /Users/adam/.travis/travis.sh

@@ -17,8 +17,10 @@ end
 if defined?(Rails) && Rails.env
   require 'logger'
 
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
-  ActiveRecord::Base.clear_active_connections!
+  if defined?(ActiveRecord)
+    ActiveRecord::Base.logger = Logger.new(STDOUT)
+    ActiveRecord::Base.clear_active_connections!
+  end
 
   class Class
     def core_ext
