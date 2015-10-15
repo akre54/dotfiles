@@ -39,6 +39,7 @@ setopt autocd
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(gem git github heroku zeus)
 
+export NODE_REPL_HISTORY_FILE=$HOME/.node_repl_history
 
 # Fix for slow git completion in large git repos
 __git_files () {
@@ -74,6 +75,8 @@ export PATH=$PATH:$HOME/Developer/android-sdk-macosx/platform-tools
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/nvm
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/Applications/QGIS.app/Contents/MacOS/bin
+
 
 source $HOME/nvm/nvm.sh
 
@@ -85,10 +88,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # For virtualenvwrapper
 #WORKON_HOME=$HOME/.virtualenvs
-source $HOME/.virtualenvs/py/bin/activate
-#source /usr/local/bin/virtualenvwrapper.sh
-export PYTHONPATH=$HOME/Projects/duolingo-2
-
+source $HOME/.virtualenvs/py3/bin/activate
+source /usr/local/bin/virtualenvwrapper.sh
+#export PYTHONPATH=$HOME/Projects/duolingo-2
+export PYTHONPATH=$PYTHONPATH:/Applications/QGIS.app/Contents/Resources/python
 
 # added by travis gem
 [ -f /Users/adam/.travis/travis.sh ] && source /Users/adam/.travis/travis.sh

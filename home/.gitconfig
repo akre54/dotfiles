@@ -47,6 +47,7 @@
   grab = clone --depth 1
   standup = log --since yesterday --author amk528@cs.nyu.edu --oneline
   ignored = ls-files --others -i --exclude-standard
+	init-safe-commit = !~/.safe-commit-hook/install-for-project.sh
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules

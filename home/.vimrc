@@ -44,7 +44,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Vundle bundles of fundle
-Bundle 'drichard/vim-brunch'
 Bundle "pangloss/vim-javascript"
 Bundle 'wavded/vim-stylus'
 Bundle 'altercation/vim-colors-solarized'
