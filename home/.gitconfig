@@ -2,7 +2,7 @@
   name = Adam Krebs
   email = amk528@cs.nyu.edu
 [core]
-	editor = vim
+  editor = vim
   excludesfile = /home/adam/.gitignore
   autocrlf = false
   filemode = false
@@ -47,19 +47,19 @@
   grab = clone --depth 1
   standup = log --since yesterday --author amk528@cs.nyu.edu --oneline
   ignored = ls-files --others -i --exclude-standard
-	init-safe-commit = !~/.safe-commit-hook/install-for-project.sh
+  init-safe-commit = !~/.safe-commit-hook/install-for-project.sh
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
 [url "git@github.com:akre54/"]
   insteadOf = "git://github.com/akre54/"
 [push]
-	default = current
+  default = current
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+  clean = git lfs clean %f
+  smudge = git lfs smudge %f
+  required = true
