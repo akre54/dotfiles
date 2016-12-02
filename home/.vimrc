@@ -38,7 +38,7 @@ au BufNewFile,BufRead Gemfile,*.rabl,*.ru set ft=ruby
 " Close vim if NERDTree is the only window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'

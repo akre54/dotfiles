@@ -73,12 +73,12 @@ export PATH=$PATH:/Applications/Postgres93.app/Contents/MacOS/bin
 export PATH=$PATH:$EC2_HOME/AWS-ElasticBeanstalk-CLI-2.2/api/bin
 export PATH=$PATH:$HOME/Developer/android-sdk-macosx/platform-tools
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:$HOME/nvm
+export PATH=$PATH:$HOME/.nvm
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/Applications/QGIS.app/Contents/MacOS/bin
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-
-source $HOME/nvm/nvm.sh
+source $HOME/.nvm/nvm.sh
 
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
@@ -87,11 +87,14 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # For virtualenvwrapper
-#WORKON_HOME=$HOME/.virtualenvs
-source $HOME/.virtualenvs/py3/bin/activate
-source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+VIRTUALENVWRAPPER_PYTHON=/Users/adam/.virtualenvs/py3/bin/python
+source $HOME/.virtualenvs/py/bin/activate
+#source /usr/local/bin/virtualenvwrapper.sh
 #export PYTHONPATH=$HOME/Projects/duolingo-2
 export PYTHONPATH=$PYTHONPATH:/Applications/QGIS.app/Contents/Resources/python
 
 # added by travis gem
 [ -f /Users/adam/.travis/travis.sh ] && source /Users/adam/.travis/travis.sh
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
