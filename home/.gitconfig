@@ -6,6 +6,8 @@
   excludesfile = /home/adam/.gitignore
   autocrlf = false
   filemode = false
+[diff]
+  algorithm = patience
 [github]
   user = akre54
   token = $GITHUB_TOKEN
