@@ -88,13 +88,14 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # For virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON=/Users/adam/.virtualenvs/py3/bin/python
+VIRTUALENVWRAPPER_PYTHON=$HOME/.virtualenvs/py3/bin/python
 source $HOME/.virtualenvs/py/bin/activate
 #source /usr/local/bin/virtualenvwrapper.sh
 #export PYTHONPATH=$HOME/Projects/duolingo-2
 export PYTHONPATH=$PYTHONPATH:/Applications/QGIS.app/Contents/Resources/python
 
 # added by travis gem
-[ -f /Users/adam/.travis/travis.sh ] && source /Users/adam/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/adam/.travis/travis.sh
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
