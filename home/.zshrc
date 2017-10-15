@@ -48,6 +48,8 @@ __git_files () {
 
 function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto; }
 
+function weather() { curl "http://wttr.in/$1";}
+
 rationalize-dot() {
   if [[ $LBUFFER = *.. ]]; then
     LBUFFER+=/..
@@ -58,20 +60,16 @@ rationalize-dot() {
 zle -N rationalize-dot
 bindkey . rationalize-dot
 
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/z/z.sh
 source $HOME/.secrets
 
 # Customize to your needs...
 
-export PATH=$PATH:$HOME/bin
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH
-export PATH=/usr/local/opt/php53/bin:$PATH
-export PATH=$PATH:/usr/share:/usr/local/heroku/bin
+export PATH=$PATH:/usr/share
 export PATH=$PATH:/Applications/Postgres93.app/Contents/MacOS/bin
 export PATH=$PATH:$EC2_HOME/AWS-ElasticBeanstalk-CLI-2.2/api/bin
-export PATH=$PATH:$HOME/Developer/android-sdk-macosx/platform-tools
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/.nvm
 export PATH=$PATH:$GOPATH/bin
@@ -79,23 +77,26 @@ export PATH=$PATH:/Applications/QGIS.app/Contents/MacOS/bin
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 source $HOME/.nvm/nvm.sh
+[ -f $HOME/.rvm/scripts/rvm ] && source $HOME/.rvm/scripts/rvm
 
 # pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
+# export PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-export VIRTUAL_ENV_DISABLE_PROMPT=true
+# export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+# export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # For virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON=$HOME/.virtualenvs/py3/bin/python
-source $HOME/.virtualenvs/py/bin/activate
-#source /usr/local/bin/virtualenvwrapper.sh
-#export PYTHONPATH=$HOME/Projects/duolingo-2
-export PYTHONPATH=$PYTHONPATH:/Applications/QGIS.app/Contents/Resources/python
+# export WORKON_HOME=$HOME/.virtualenvs
+# VIRTUALENVWRAPPER_PYTHON=$HOME/.virtualenvs/py3/bin/python
+# source $HOME/.virtualenvs/py/bin/activate
+# #source /usr/local/bin/virtualenvwrapper.sh
+# #export PYTHONPATH=$HOME/Projects/duolingo-2
+# export PYTHONPATH=$PYTHONPATH:/Applications/QGIS.app/Contents/Resources/python
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/adam/.travis/travis.sh
+
+export EDITOR=vim
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
