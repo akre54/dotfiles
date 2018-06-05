@@ -4,14 +4,11 @@ alias rm='rm -i'
 #get window class (useful for Maximus exceptions in gconf-editor)
 alias WM_CLASS='xprop |grep WM_CLASS'
 
-#git stuff
-alias git-publish-branch='ruby /home/adam/Downloads/git-publish-branch.sh'
-alias git-wtf='ruby /home/adam/Downloads/git-wtf.sh'
+alias g=git
 
 alias hstart="/usr/local/Cellar/hadoop/2.7.1/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/start-yarn.sh"
 alias hstop="/usr/local/Cellar/hadoop/2.7.1/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/stop-dfs.sh"
 
-#Android development
-alias logcat='python /home/adam/Downloads/android-sdk-linux_x86/tools/coloredlogcat.py'
+alias logcat='python $HOME/Downloads/android-sdk-linux_x86/tools/coloredlogcat.py'
 
 alias m='mongod --config ~/.mongorc'
