@@ -4,6 +4,8 @@ export NODE_REPL_HISTORY_FILE=$HOME/.node_repl_history
 
 export ZIM_HOME=${ZDOTDIR:-$HOME}/.zim
 export GOPATH=$HOME/go
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export ANDROID_HOME=/usr/local/Caskroom/android-sdk/4333796
 
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH
 export PATH=$PATH:/usr/share
